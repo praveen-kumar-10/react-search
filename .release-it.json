@@ -1,0 +1,22 @@
+{
+  "git": {
+    "requireCleanWorkingDir": false,
+    "commitMessage": "chore: release v${version}"
+  },
+  "github": {
+    "release": true,
+    "web": true
+  },
+  "npm": {
+    "publish": true,
+    "skipChecks": true
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "out": ["dist/package.json"]
+    }
+  },
+  "hooks": {
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+  }
+}

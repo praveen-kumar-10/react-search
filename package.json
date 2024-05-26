@@ -16,8 +16,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "./dist/react-search.umd.js",
-  "module": "./dist/react-search.es.js",
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -31,7 +33,6 @@
     "prepublishOnly": "pnpm build",
     "release": "release-it"
   },
-  "typings": "dist/index.d.ts",
   "dependencies": {
     "fuse.js": "^7.0.0",
     "react": "^18.2.0",
@@ -47,6 +48,8 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "clsx": "^2.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -54,20 +57,26 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.4",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "release-it": "^17.3.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.3",
     "tsup": "^8.0.2",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1"
   },
   "resolutions": {
     "@types/react": "^18.2.66"
   },
   "exports": {
     ".": {
-      "import": "./dist/react-search.es.js",
-      "require": "./dist/react-search.umd.js"
-    }
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "husky": {
     "hooks": {
